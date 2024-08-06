@@ -1,0 +1,29 @@
+FROM python:3.11-slim
+RUN apt update
+RUN apt install git-all -y
+RUN pip install \
+    dagster==1.7.15\
+    dagster-graphql==1.7.15 \
+    dagster-webserver==1.7.15 \
+    dagster-postgres==0.23.15 \
+    dagster-docker==0.23.15 \
+    dbt-core==1.8.4 \
+    dbt-postgres==1.8.2 \    
+    dagster-dbt==0.23.15 
+
+
+# Add repository code
+
+WORKDIR /opt/dagster/app
+
+RUN mkdir -p elt_scripts
+
+COPY . /opt/dagster/app
+
+# Run dagster gRPC server on port 4000
+
+EXPOSE 4000
+
+# CMD allows this to be overridden from run launchers or executors that want
+# to run other commands against your repository
+CMD ["dagster", "api", "grpc", "-h", "0.0.0.0", "-p", "4000", "-f", "__init__.py"]

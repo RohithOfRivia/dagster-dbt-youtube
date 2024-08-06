@@ -1,0 +1,12 @@
+youtube_elt_dbt:
+  outputs:
+    dev:
+      dbname: airflow
+      host: host.docker.internal
+      pass: secret
+      port: 5432
+      schema: public
+      threads: 1
+      type: postgres
+      user: elt_user
+  target: dev
