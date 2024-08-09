@@ -54,7 +54,7 @@ Ensure you have the following installed on your system:
 - [DBT](https://docs.getdbt.com/docs/installation)
 - [YouTube Data API](https://developers.google.com/youtube/v3) (for fetching YouTube data)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
-- 
+
 ### Configuration
 - **.env file**: Modify the .env file to add your API key within the double quotes.
 - **Dagster Configuration**: Update `dagster.yaml` with your specific pipeline settings, if necessary. In most cases, you can run it as is.
