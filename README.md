@@ -1,5 +1,6 @@
+
 # Dagster-DBT-YouTube
-Welcome to the **Dagster-DBT-YouTube** repository. This project integrates Dagster, Python and PostgreSQL with DBT (Data Build Tool) to manage data pipelines, specifically for processing and analyzing YouTube data that is obtained through the [YouTube Data API v3](https://developers.google.com/youtube/v3). Created to run with Docker Desktop for easy execution and setup in a containerized environment.  
+Welcome to the **Dagster-DBT-YouTube** repository. This project integrates Dagster, Python and PostgreSQL with DBT (Data Build Tool) to manage data pipelines for processing and analyzing YouTube data that is obtained through the [YouTube Data API v3](https://developers.google.com/youtube/v3). Created to run with Docker Desktop for easy execution and setup in a containerized environment.  
 ## Table of Contents
 - [Overview](#overview)
 - [Features](#features)
@@ -10,10 +11,14 @@ Welcome to the **Dagster-DBT-YouTube** repository. This project integrates Dagst
 - [Acknowledgments](#acknowledgments)
 ## Overview
 ### Project Workflow Diagram
-<br>**To be added soon**<br>
+<br>![Dagster project diagram](https://github.com/user-attachments/assets/0f887ad2-bf0b-408c-801f-d7cf24b10ca0)<br>
+
 
 ###  PostgreSQL Schema and ER Diagram
-<br>**To be added soon**<br>
+<br>
+
+**To be ad![Uploading Dagster project diagram.jpg…]()
+ded soon**<br>
 ###  Dagster Assets:
 -  Performs a get request using the YouTube API to fetch the top 200 trending videos and some relevant information(title, views, channel name, etc.) in YouTube (Location is set to Canada).
 - Parses the API response and uploads the data into the videos table in a PostgreSQL database. Any items conflicting with the database constraints are ignored.
@@ -21,9 +26,12 @@ Welcome to the **Dagster-DBT-YouTube** repository. This project integrates Dagst
 ### DBT:
 Creates some views that provide meaningful insights from the videos and channels data. This includes:
 1. word_counts_title_distinct: Overall count of words that appear in the channel titles, ranked according to number of occurrences. Stopwords are not counted.
+
 2. trending_video_counts_per_channel: Calculates the total number of videos that appear in the top 200 by ever channel. This shows how effective a channel is at producing trending videos.
+
 3. channel_rankings: Calculates the number of videos by each channel appearing in the videos table. Unlike trending_video_counts_per_channel, this adds up all multiple occurrences of a video on a different day. That is, if a video appears in the top 200 on one day, and it shows up again on another day, that counts towards the total video count. This shows how consistent a channel is at publishing trending videos, and also how long it tends to stay in the trending list. 
-4. All channels ranked by views, also includes statistics like subscribers, total video count, etc.
+
+5. All channels ranked by views, also includes statistics like subscribers, total video count, etc.
  
 ## Features
 - **Dagster Integration**: Seamlessly orchestrate ETL processes with Dagster.
@@ -41,18 +49,10 @@ Ensure you have the following installed on your system:
 ### Configuration
 - **.env file**: Modify the .env file to add your API key within the double quotes.
 - **Dagster Configuration**: Update `dagster.yaml` with your specific pipeline settings, if necessary. In most cases, you can run it as is.
-
-    
-          
-            
-    
-
-    
-    
   
 - **DBT Configuration**: Modify `dbt_project.yml` and `profiles.yml` according to your setup. Can run without any modifications.
 - **Asset execution schedule**: The assets are programmed to run hourly, the schedule object in \_\_init\__.py can be modified to make changes to the schedule.
-### Installation and Running
+### Installation
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/RohithOfRivia/dagster-dbt-youtube.git
@@ -62,7 +62,8 @@ Ensure you have the following installed on your system:
 	   docker compose up --build
 3. **Access webserver for monitoring the assets**::
 	- Open your browser and go to this address: *localhost:3000*
-	- All assets can be viewed and materialized as required from the assets tab
+	- All assets can be viewed and materialized as required from the assets tab.
+	
 4. **Access postgres container to monitor the database**: 
 	Run these commands to access the database. *(The container name can be obtained from the docker desktop app. Go to the containers and select the postgres container that is not docker_postgresq. You will be able to see a heading on the top of this page, which is the container name.)*  
 	```bash
