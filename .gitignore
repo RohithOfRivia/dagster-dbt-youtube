@@ -4,5 +4,3 @@ ignore/
 elt_scripts/__pycache__/
 query.txt
 pgdump.sql
-dbt_dagster/target/compiled/
-dbt_dagster/target/run/
