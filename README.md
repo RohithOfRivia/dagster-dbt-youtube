@@ -10,7 +10,10 @@ Welcome to the **Dagster-DBT-YouTube** repository. This project integrates Dagst
 - [Acknowledgments](#acknowledgments)
 ## Overview
 ### Project Workflow Diagram
-###  PostgreSQL Schema and ER Diagram 
+<br>To be added soon<br>
+
+###  PostgreSQL Schema and ER Diagram
+<br>To be added soon<br>
 ###  Dagster Assets:
 -  Performs a get request using the YouTube API to fetch the top 200 trending videos and some relevant information(title, views, channel name, etc.) in YouTube (Location is set to Canada).
 - Parses the API response and uploads the data into the videos table in a PostgreSQL database. Any items conflicting with the database constraints are ignored.
