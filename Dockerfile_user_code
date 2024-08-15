@@ -19,6 +19,7 @@ WORKDIR /opt/dagster/app
 RUN mkdir -p elt_scripts
 
 COPY . /opt/dagster/app
+COPY ./dbt_dagster/dbt_project.yml /opt/dagster/app
 
 # Run dagster gRPC server on port 4000
 
