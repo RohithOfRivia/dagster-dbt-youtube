@@ -47,8 +47,6 @@ Ensure you have the following installed on your system:
             
     
 
-          
-          Expand Down
     
     
   
