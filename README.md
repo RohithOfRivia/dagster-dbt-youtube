@@ -2,14 +2,34 @@
 # Dagster-DBT-YouTube
 Welcome to the **Dagster-DBT-YouTube** repository. This project integrates Dagster, Python and PostgreSQL with DBT (Data Build Tool) to manage data pipelines for processing and analyzing YouTube data that is obtained through the [YouTube Data API v3](https://developers.google.com/youtube/v3). Created to run with Docker Desktop for easy execution and setup in a containerized environment.  
 ## Table of Contents
-- [Overview](#overview)
 - [Features](#features)
+- [Overview](#overview)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Configuration](#configuration)
 - [Acknowledgments](#acknowledgments)
+
+## Features
+- **Dagster Integration**: Seamlessly orchestrates and automates ETL processes(pulling, updating and transforming data) using Python.
+- **DBT Models**: Transform raw YouTube data from the database into meaningful insights.
+
 ## Overview
+###  Dagster assets functionality:
+- Performs a get request using the YouTube API to fetch the top 200 trending videos and some relevant information(title, views, channel name, etc.) in YouTube (Location is set to Canada).
+- Parses the API response and uploads the data into the videos table in a PostgreSQL database. Any items conflicting with the database constraints are ignored.
+- Performs another get request to fetch details of all channels associated with the videos that were inserted prior to the request. The response is parsed and uploaded to another table called channels.
+- Runs DBT to create/update additional models for data analysis
+### DBT:
+Creates some views that provide meaningful insights from the videos and channels data. This includes:
+1. word_counts_title_distinct: Overall count of words that appear in the channel titles, ranked according to number of occurrences. Stopwords are not counted.
+
+2. trending_video_counts_per_channel: Calculates the total number of videos that appear in the top 200 by ever channel. This shows how effective a channel is at producing trending videos.
+
+3. channel_rankings: Calculates the number of videos by each channel appearing in the videos table. Unlike trending_video_counts_per_channel, this adds up all multiple occurrences of a video on a different day. That is, if a video appears in the top 200 on one day, and it shows up again on another day, that counts towards the total video count. This shows how consistent a channel is at publishing trending videos, and also how long it tends to stay in the trending list. 
+
+5. All channels ranked by views, also includes statistics like subscribers, total video count, etc.
+
 ### Project Workflow Diagram
 <br>![Dagster project diagram](https://github.com/user-attachments/assets/0f887ad2-bf0b-408c-801f-d7cf24b10ca0)<br>
 
@@ -21,24 +41,6 @@ Welcome to the **Dagster-DBT-YouTube** repository. This project integrates Dagst
 
 <br>
 
-###  Dagster Assets:
--  Performs a get request using the YouTube API to fetch the top 200 trending videos and some relevant information(title, views, channel name, etc.) in YouTube (Location is set to Canada).
-- Parses the API response and uploads the data into the videos table in a PostgreSQL database. Any items conflicting with the database constraints are ignored.
-- Performs another get request to fetch details of all channels associated with the videos that were inserted prior to the request. The response is parsed and uploaded to another table called channels.
-### DBT:
-Creates some views that provide meaningful insights from the videos and channels data. This includes:
-1. word_counts_title_distinct: Overall count of words that appear in the channel titles, ranked according to number of occurrences. Stopwords are not counted.
-
-2. trending_video_counts_per_channel: Calculates the total number of videos that appear in the top 200 by ever channel. This shows how effective a channel is at producing trending videos.
-
-3. channel_rankings: Calculates the number of videos by each channel appearing in the videos table. Unlike trending_video_counts_per_channel, this adds up all multiple occurrences of a video on a different day. That is, if a video appears in the top 200 on one day, and it shows up again on another day, that counts towards the total video count. This shows how consistent a channel is at publishing trending videos, and also how long it tends to stay in the trending list. 
-
-5. All channels ranked by views, also includes statistics like subscribers, total video count, etc.
- 
-## Features
-- **Dagster Integration**: Seamlessly orchestrate ETL processes with Dagster.
-- **DBT Models**: Transform raw YouTube data into meaningful insights using DBT models.
-- **YouTube Data Pipeline**: Illustrates the process of pulling, transforming, and analyzing YouTube data.
 ## Getting Started
 ### Prerequisites
 Ensure you have the following installed on your system:
