@@ -34,10 +34,24 @@ Creates some views that provide meaningful insights from the videos and channels
 <br>![Dagster project diagram](https://github.com/user-attachments/assets/0f887ad2-bf0b-408c-801f-d7cf24b10ca0)<br>
 
 
-###  ER Diagram and DBT models
+###  ER Diagram
 <br>
 
 ![SQL ER](https://github.com/user-attachments/assets/2045d578-b872-498e-aa81-f6e2e3a82855)
+
+<br>
+
+### DBT models
+<br>
+![Screenshot 2024-08-22 115432](https://github.com/user-attachments/assets/5445adbb-9a70-4c3f-b58b-b82d48c29725)
+
+
+<img width="450" alt="Screenshot 2024-08-22 115558" src="https://github.com/user-attachments/assets/a7a43778-4523-45d5-830e-76d9ad9f1584">
+
+![Screenshot 2024-08-22 115459](https://github.com/user-attachments/assets/e376ee4e-b0f2-4c75-8ebc-d532cfcd1992)
+
+![Screenshot 2024-08-22 115401](https://github.com/user-attachments/assets/6fd3294d-b8b8-45da-b62d-9354c1664cdd)
+
 
 <br>
 
