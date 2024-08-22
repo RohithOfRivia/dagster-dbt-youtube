@@ -47,19 +47,22 @@ Creates some views that provide meaningful insights from the videos and channels
 <br>
 ![Screenshot 2024-08-21 115459](https://github.com/user-attachments/assets/cc6614c6-27f7-4188-8f6e-f6bd178f2fa4)
 <br>
+<br>
 **view_ranks**
 <br>
 <img width="450" alt="Screenshot 2024-08-22 115558" src="https://github.com/user-attachments/assets/a7a43778-4523-45d5-830e-76d9ad9f1584">
+<br>
 <br>
 
 **trending _video_counts**
 <br>
 ![Screenshot 2024-08-22 115459](https://github.com/user-attachments/assets/e376ee4e-b0f2-4c75-8ebc-d532cfcd1992)
 <br>
+<br>
 **channel_rankings**
 <br>
 ![Screenshot 2024-08-22 115401](https://github.com/user-attachments/assets/6fd3294d-b8b8-45da-b62d-9354c1664cdd)
-
+<br>
 
 <br>
 
