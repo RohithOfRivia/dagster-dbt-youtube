@@ -45,7 +45,7 @@ Creates some views that provide meaningful insights from the videos and channels
 <br>
 **word_counts_title_distinct**
 <br>
-![sdg](https://github.com/user-attachments/assets/345a167b-8961-4d77-ba08-203452b3777d)
+![Screenshot 2024-08-22 115432](https://github.com/user-attachments/assets/cc6614c6-27f7-4188-8f6e-f6bd178f2fa4)
 <br>
 **view_ranks**
 <br>
