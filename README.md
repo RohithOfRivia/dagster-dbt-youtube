@@ -42,7 +42,7 @@ Creates some views that provide meaningful insights from the videos and channels
 <br>
 
 ### DBT models
-<br>
+
 **word_counts_title_distinct**
 <br>
 ![Screenshot 2024-08-21 115459](https://github.com/user-attachments/assets/cc6614c6-27f7-4188-8f6e-f6bd178f2fa4)
