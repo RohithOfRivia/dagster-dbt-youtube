@@ -43,13 +43,16 @@ Creates some views that provide meaningful insights from the videos and channels
 
 ### DBT models
 <br>
-![Screenshot 2024-08-22 115432](https://github.com/user-attachments/assets/5445adbb-9a70-4c3f-b58b-b82d48c29725)
 
 
+**word_counts_title_distinct**
 <img width="450" alt="Screenshot 2024-08-22 115558" src="https://github.com/user-attachments/assets/a7a43778-4523-45d5-830e-76d9ad9f1584">
+<br>
 
+**sdv**
 ![Screenshot 2024-08-22 115459](https://github.com/user-attachments/assets/e376ee4e-b0f2-4c75-8ebc-d532cfcd1992)
-
+<br>
+**sdfds**
 ![Screenshot 2024-08-22 115401](https://github.com/user-attachments/assets/6fd3294d-b8b8-45da-b62d-9354c1664cdd)
 
 
