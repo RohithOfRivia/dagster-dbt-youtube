@@ -28,7 +28,7 @@ Creates some views that provide meaningful insights from the videos and channels
 
 3. channel_rankings: Calculates the number of videos by each channel appearing in the videos table. Unlike trending_video_counts_per_channel, this adds up all multiple occurrences of a video on a different day. That is, if a video appears in the top 200 on one day, and it shows up again on another day, that counts towards the total video count. This shows how consistent a channel is at publishing trending videos, and also how long it tends to stay in the trending list. 
 
-5. All channels ranked by views, also includes statistics like subscribers, total video count, etc.
+5. view_ranks: All channels ranked by views, also includes statistics like subscribers, total video count, etc.
 
 ### Project Workflow Diagram
 <br>![Dagster project diagram](https://github.com/user-attachments/assets/0f887ad2-bf0b-408c-801f-d7cf24b10ca0)<br>
@@ -43,9 +43,11 @@ Creates some views that provide meaningful insights from the videos and channels
 
 ### DBT models
 <br>
-
-
 **word_counts_title_distinct**
+<br>
+![Screenshot 2024-08-22 115432](https://github.com/user-attachments/assets/0dbb519f-2d98-409c-80ed-c7833b0e6d1b)
+<br>
+**view_ranks**
 <br>
 <img width="450" alt="Screenshot 2024-08-22 115558" src="https://github.com/user-attachments/assets/a7a43778-4523-45d5-830e-76d9ad9f1584">
 <br>
